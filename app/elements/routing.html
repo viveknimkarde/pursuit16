@@ -1,0 +1,141 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<script src="../bower_components/page/page.js"></script>
+<script>
+  window.addEventListener('WebComponentsReady', function() {
+
+    // We use Page.js for routing. This is a Micro
+    // client-side router inspired by the Express router
+    // More info: https://visionmedia.github.io/page.js/
+
+    // Removes end / from app.baseUrl which page.base requires for production
+    if (window.location.port === '') {  // if production
+      page.base(app.baseUrl.replace(/\/$/, ''));
+    }
+
+    // Middleware
+    function scrollToTop(ctx, next) {
+      app.scrollPageToTop();
+      next();
+    }
+
+    function closeDrawer(ctx, next) {
+      app.closeDrawer();
+      next();
+    }
+
+    // Routes
+    page('*', scrollToTop, closeDrawer, function(ctx, next) {
+      next();
+    });
+
+    page('/', function() {
+      app.route = 'home';
+    });
+
+    page(app.baseUrl, function() {
+      app.route = 'home';
+    });
+
+
+    page('/events', function() {
+      app.route = 'events';
+    });
+    page('/mechworld', function() {
+      app.route = 'mechworld';
+    });  page('/computerworld', function() {
+        app.route = 'computerworld';
+      });  page('/bworld', function() {
+          app.route = 'bworld';
+        });  page('/robotics', function() {
+            app.route = 'robotics';
+          });  page('/ieee', function() {
+              app.route = 'ieee';
+            }); page('/circuitworld', function() {
+                app.route = 'circuitworld';
+              });
+              page('/exibitions', function() {
+                  app.route = 'exibitions';
+                });
+                page('/iste', function() {
+                    app.route = 'iste';
+                  });
+
+
+    page('/events/:name', function(data) {
+      app.route = 'events-info';
+      app.params = data.params;
+    });
+
+    page('/contact', function() {
+      app.route = 'contact';
+    });
+    page('/sponsors', function() {
+      app.route = 'sponsors';
+    });
+    page('/accomodation', function() {
+      app.route = 'accomodation';
+    });
+    page('/team', function() {
+      app.route = 'team';
+    });
+    page('/infor', function() {
+      app.route = 'infor';
+    });
+    page('/mastermind', function() {
+      app.route = 'mastermind';
+    });
+    page('/searchspider', function() {
+      app.route = 'searchspider';
+    });
+    page('/backtrack', function() {
+      app.route = 'backtrack';
+    });
+
+    page('/technorad', function() {
+      app.route = 'technorad';
+    });
+    page('/circuitmania', function() {
+      app.route = 'circuitmania';
+    });
+    page('/mudrace', function() {
+      app.route = 'mudrace';
+    });  page('/roborace', function() {
+        app.route = 'roborace';
+      });
+      page('/langaimg', function() {
+        app.route = 'circuitmania';
+      });
+      page('/counterstrike', function() {
+        app.route = 'counterstrike';
+      });
+      page('/snakeladder', function() {
+        app.route = 'snakeladder';
+      });
+      page('/funevents', function() {
+        app.route = 'funevents';
+      });
+
+
+    // 404
+    page('*', function() {
+      app.$.toast.text = 'Can\'t find: ' + window.location.href  + '. Redirected you to Home Page';
+      app.$.toast.show();
+      page.redirect(app.baseUrl);
+    });
+
+    // add #! before urls
+    page({
+      hashbang: true
+    });
+
+  });
+</script>

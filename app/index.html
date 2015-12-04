@@ -1,0 +1,976 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Polymer Starter Kit</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+<link rel="import" href="bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="bower_components/iron-icons/social-icons.html">
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles">
+  paper-card{
+--paper-card-header-color:white;
+ }
+ google-map {
+   display: block;
+
+    height: 600px;
+  }</style>
+
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="home" href="{{baseUrl}}">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+          <a data-route="events" href="events">
+            <iron-icon icon="event"></iron-icon>
+            <span>Events</span>
+          </a>
+
+          <a data-route="sponsors" href="sponsors">
+            <iron-icon icon="mail"></iron-icon>
+            <span>sponsors</span>
+          </a>
+          <a data-route="accomodation" href="accomodation">
+            <iron-icon icon="maps:local-hotel"></iron-icon>
+            <span>Accomodation</span>
+          </a>
+          <a data-route="team" href="team">
+            <iron-icon icon="social:people"></iron-icon>
+            <span>Our Team</span>
+          </a>
+          <a data-route="infor" href="infor">
+            <iron-icon icon="info"></iron-icon>
+            <span>Info</span>
+          </a>
+          <a data-route="contact" href="contact">
+            <iron-icon icon="mail"></iron-icon>
+            <span>contact</span>
+          </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+
+          <!-- Application name -->
+          <div class="middle middle-container center horizontal layout">
+
+          <img src="https://lh3.googleusercontent.com/-LsIXd6S7Uv4/UwMHBDbo7cI/AAAAAAAAAzM/jm2iy-X7umw/w426-h321/logo.png" style="width:20%;height:auto"></img>  <div class="app-name" >SSGMCE Present </div><img class="app-name" src="images/pursuit16logo.png" style="width:25%;height:auto"></img>Brought to you by  <img class="app-name" src="images/sparx.png" style="width:10%;height:auto"></img>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container center horizontal layout">
+            <div class="bottom-title paper-font-subhead" ></div>
+          </div>
+
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content" style=" background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQS8umP3idek5PMou2KMa9u07AMGurt3UypskJ8giL2ncP8geUcxQ");">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+            <section data-route="home" >
+                  <paper-card elevation="2"  heading=""  style="margin:10px;">
+<div class="card-content"><h2>Welcome to Smart Pursuit<div  style="float:right">22'nd & 23'rd Jan</div> </h2><center><img src="images/pursuit.png" style="width:60%"></center></div>
+
+                   </paper-card>
+
+            </section>
+
+            <section data-route="events">
+
+                <h2 class="page-title"></h2>
+
+                <paper-card heading="" style="width:300px;float:left;margin:40px" image="http://aliet.ac.in/gallery/var/albums/CSE-DEPT/event-2/event-4/project%20expo%20(1).jpg?m=1436951569" elevation="2">
+                <div class="card-actions">
+                <a data-route="exibitions" href="exibitions" style="text-decoration:none" > <h3 style="float:left">Exibitions</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                </div>
+              </paper-card>
+               <paper-card heading=""style="width:300px;float:left;margin:40px"image="http://www.thegreatpakistanis.com/articles/computer-science/computer-network.jpg"  elevation="2">
+               <div class="card-actions">
+               <a data-route="computerworld" href="computerworld" style="text-decoration:none" > <h3 style="float:left">Computer World</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+               </div>
+                </paper-card>
+
+                <paper-card heading=""style="width:300px;float:left;margin:40px" image="http://www.adu.ac.ae/Portals/0/Skins/ADU/Upload/UploadImage/IMG%2007-07-2014%2005=32=50.jpg"  elevation="2">
+                <div class="card-actions">
+                <a data-route="mechworld" href="mechworld" style="text-decoration:none" > <h3 style="float:left">Mech World</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                </div>
+                </paper-card><paper-card heading=""style="width:300px;float:left;margin:50px"image="http://thumbs.dreamstime.com/z/electronics-recycling-3247379.jpg" elevation="2">
+                <div class="card-actions">
+                <a data-route="circuitworld" href="circuitworld" style="text-decoration:none" > <h3 style="float:left">Circuit World</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                </div>
+                </paper-card>
+
+                <paper-card heading=""style="width:300px;float:left;margin:50px" image="https://wkunews.files.wordpress.com/2011/03/2011-02-26_lego-robot_lemon-181.jpg"  elevation="2">
+                <div class="card-actions">
+                <a data-route="robotics" href="robotics" style="text-decoration:none" > <h3 style="float:left;color:purple">Robotics</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                </div>
+
+
+                 </paper-card>
+                <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://www.icaet.egspec.org/index_files/IEEE_Logo.jpg"  elevation="2">
+                 <div class="card-actions">
+                 <a data-route="ieee" href="ieee" style="text-decoration:none" > <h3 style="float:left;color:purple">IEEE Paper Presentstion</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                 </div>
+
+
+                 </paper-card>
+                 <paper-card heading=""style="width:300px;float:left;margin:50px"image="http://www.entrepreneurshiplife.com/wp-content/uploads/2015/09/entrepreneur.jpg" elevation="2">
+                 <div class="card-actions">
+                 <a data-route="bworld" href="bworld" style="text-decoration:none" > <h3 style="float:left">BWorld</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                 </div>
+                 </paper-card>
+
+                 <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://lisabien.com/wp-content/uploads/2015/09/fun-photo.jpg"  elevation="2">
+
+                 <div class="card-actions">
+                 <a data-route="bworld" href="funevents" style="text-decoration:none" > <h3 style="float:left">Fun Events</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+                 </div>
+                </paper-card>
+
+
+
+
+
+        </section>
+
+        <section data-route="events-register">
+              <paper-material elevation="1">
+                <h2>Registration starts from 18 December </h2>
+            </section>
+        <section data-route="exibitions">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://adityatekkali.edu.in/images/istelogo.jpg"  elevation="2">
+              <div class="card-content">A festival of technology is incomplete without  new inventions So presenting "ISTE GRAND PROJECT EXPO" A national level Event</div>
+              <div class="card-actions">
+                <a data-route="iste" href="iste" style="text-decoration:none" > <h4 style="float:left">ISTE Grand Project Expo</h4> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+
+        </section>
+        <section data-route="computerworld">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://www.bensglobal.com/uploads/1/2/0/7/12071646/8551370_orig.jpg"  elevation="2">
+              <div class="card-content">A master mind sees it before it comes
+<br>A master mind before he goes to war he count his one's
+<br>A master mind every thing planned out perfect <br>- Now lets see "Are you mastermind ?"</div>
+              <div class="card-actions">
+                <a data-route="mastermind" href="mastermind" style="text-decoration:none" > <h3 style="float:left">Mastermind</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://www.crimsondesigns.com/new-images/google-spider-tnail.gif"  elevation="2">
+              <div class="card-content">Internet is having lot of information lets see how efficient you are to get info </div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="searchspider" style="text-decoration:none" > <h3 style="float:left">Search Spider</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://image.slidesharecdn.com/algoritmodebacktracking-130429160424-phpapp02/95/algoritmo-de-backtracking-1-638.jpg"  elevation="2">
+              <div class="card-content">Working is not so tough than tracking it back lets do it </div>
+              <div class="card-actions">
+                <a data-route="backtrack" href="backtrack" style="text-decoration:none" > <h3 style="float:left">Backtrack</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+      </section>
+      <section data-route="mechworld">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://www.bishopsbicycles.net/images/shop/bishops_bicycles_workshop.jpg"  elevation="2">
+              <div class="card-content">The best machine to play with is a bicycle. lets check how much you know about bicycle</div>
+              <div class="card-actions">
+                <a data-route="technorad" href="technorad" style="text-decoration:none" > <h3 style="float:left">Techno-Rad</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading="Bworld"style="width:300px;float:left;margin:50px" image="http://media-cdn.tripadvisor.com/media/photo-s/06/ea/96/8f/new-world-st-hostel.jpg"  elevation="2">
+              <div class="card-content">Some contentkfhe wguhergh eribgveirrr rrrrrrrrruuughh hhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhh hhhhhhhh hhhhhhhh</div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="exibitions" style="text-decoration:none" > <h3 style="float:left">Exibitions</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading="Bworld"style="width:300px;float:left;margin:50px" image="http://media-cdn.tripadvisor.com/media/photo-s/06/ea/96/8f/new-world-st-hostel.jpg"  elevation="2">
+              <div class="card-content">Some contentkfhe wguhergh eribgveirrr rrrrrrrrruuughh hhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhh hhhhhhhh hhhhhhhh</div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="exibitions" style="text-decoration:none" > <h3 style="float:left">Exibitions</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+        </section>
+        <section data-route="bworld">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://media-cdn.tripadvisor.com/media/photo-s/06/ea/96/8f/new-world-st-hostel.jpg"  elevation="2">
+              <h2>Coming Soon</h2>
+              </paper-card>
+
+        </section>
+        <section data-route="funevents">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="https://supershy.files.wordpress.com/2011/06/snakes-and-ladders2-copy.jpg"  elevation="2">
+              <div class="card-content">The Game of Ups And Downs .Ups are ladders and downs are snakes.little challenges teach us life</div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="snakeladder" style="text-decoration:none" > <h3 style="float:left">Snake & Ladder</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://www.lazygamer.net/images/2014/07/Counter-Strike-IRL.jpg"  elevation="2">
+              <div class="card-content">It is An onground Real Counter strike Game With Weapons in hand .And a just for fun fight between two teams </div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="counterstrike" style="text-decoration:none" > <h3 style="float:left">Counter Strike – The Next Step</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://images.bit-tech.net/content_images/2007/08/omega_sektor_lan_gaming_centre/b6.jpg"  elevation="2">
+              <div class="card-content">Play A single Game Live with too many people thats all the lan gaming .Enterrr to th eGaming Adda</div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="langaming" style="text-decoration:none" > <h3 style="float:left">LAn GAming</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+            </paper-card>
+
+        </section>
+        <section data-route="ieee">
+
+                  <paper-card heading=""style="float:left;margin:50px" image="http://2.bp.blogspot.com/-bk-QJk1_flo/VOTLofQ1ogI/AAAAAAAAAD4/gx4uZljL0Lo/s1600/mic_and_audience_L-800x531.jpg"  elevation="2">
+                  <div class="card-content" style="padding:60px"><br><h2>Coming Soon</h2>
+                  <div class="card-actions">
+                    <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                  </div>
+                  </paper-card>
+
+
+        </section>
+
+        <section data-route="robotics">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://news.mit.edu/sites/mit.edu.newsoffice/files/styles/article_cover_image_original/public/images/2015/robot-race-mit-02.png"  elevation="2">
+              <div class="card-content">Thats The matter of life . Dare to enter</div>
+              <div class="card-actions">
+                <a data-route="robohrace" href="mudrace" style="text-decoration:none" > <h3 style="float:left">Mud  Race</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://static5.depositphotos.com/1034582/504/i/950/depositphotos_5041425-Robots-running.jpg"  elevation="2">
+              <div class="card-content">Life is a race ... if you don't run fast ... you will be like a broken undaa --3 idiots <br> </div>
+              <div class="card-actions">
+                <a data-route="roborace" href="roborace" style="text-decoration:none" > <h3 style="float:left">Robo Race</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+        </section>
+        <section data-route="circuitworld">
+              <paper-card heading=""style="width:300px;float:left;margin:50px" image="http://i.kinja-img.com/gawker-media/image/upload/s--mAVNV7cj--/18g6su9j6sf6ojpg.jpg"  elevation="2">
+              <div class="card-content">All About The circuits And current</div>
+              <div class="card-actions">
+                <a data-route="circuitmania" href="circuitmania" style="text-decoration:none" > <h3 style="float:left">Circuit Mania</h3> <paper-fab icon="arrow-forward" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+
+        </section>
+
+
+      <section data-route="iste">
+              <paper-card heading=""style="float:left;margin:50px" image="https://orlandoms.files.wordpress.com/2011/11/20111111-pda-congress-016.jpg"  elevation="2">
+              <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> Grand Project Expo is a Student Project Contest to be held on March 14 & 15, 2014. It is an national-level event to be organized by Shri Sant Gajanan Maharaj College of Engineering Shegaon & open for UG and PG students across India. This contest aims to encourage out of the box ideas and provide a platform to present creativity and innovation of students.
+           The contest will look at innovation as a	process focused on a range of disciplines in electronics, electrical and computer science engineering branches. The objective of this contest is to promote research activities among the engineering students at undergraduate and postgraduate level and let them present their novel and innovative ideas and reward them.</h4><br>
+              <h2>Tasks:</h2><br><h4>Will be updated soon</h4><br><h2>Rules :</h2><br><h4>1.Name of Participants in a Group is max Four.
+<br>2) All students exhibiting a particular model should belong to the same institution.
+<br>3) Student studying in any discipline can send an entry in any section. The choice of section should be made based on the field/topic/application of the model and not on the discipline/branch of diploma/degree course.
+<br>4) The choice of section is to be given by the students themselves in the entry form while submitting the form. No change in this choice will be allowed thereafter.
+<br>5) The participants will have to submit one soft copy of Synopsis of Project up to 12-March-2014 on pursuit14ssgmce@gmail.com
+<br>6)The decision given by judges in all the matters will be final.
+<br>7) All participants will have to produce their IDENTITY CARDS while reporting for the competition.
+<br>8) No student will be allowed to participate in the competition without a valid identity card.
+<br>
+9) The models will be assessed section wise by a panel of judges which will include engineering faculty and persons from industry. </h4><br><h2>Prizes :</h2><br><h4>Will Be updated soon</h4><br><h2>Contact:</h2><br><h4></h4></div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+
+        </section>
+        <section data-route="mastermind">
+              <paper-card heading=""style="float:left;margin:50px" image="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/E7F/16ED17/XyXoqz-nwLFVl50WhHHE2A/mastermind.jpg"  elevation="2">
+              <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> Mastermind is a technical event. As its name indicate playing team has to apply his
+
+knowledge and talent while playing the game.<br>
+
+Team & fees structure:<br>
+
+    2 members in a group and Rs 50/- Per team </h4><br><h2>Tasks:</h2><br><h4>Each group will be having specific task on a computer .Group has to complete it within time.
+
+Winner will be decided on the basis of completion of task and time for completion of task .</h4><br><h2>Rules :</h2><br><h4>1. Use of internet is allow .
+
+2. Complete the task within specified time.
+
+3. Marking will be based on the
+
+ Completion of task
+
+ time</h4><br><h2>Prizes :</h2><br><h4>Will Be updated soon</h4><br><h2>Contact:</h2><br><h4>Vaibhao Falode- 7385771121                         <br> Sumit Bajare – 7709762761
+
+<br>Chetan Patil -8856897072</h4></div>
+              <div class="card-actions">
+                <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+              </div>
+              </paper-card>
+
+            </section>
+            <section data-route="backtrack">
+                  <paper-card heading=""style="float:left;margin:50px" image="http://image.slidesharecdn.com/algoritmodebacktracking-130429160424-phpapp02/95/algoritmo-de-backtracking-1-638.jpg?cb=1367251504"  elevation="2">
+                  <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> Back Track is all about reverse coding, testing your logic and coding skills. It will require thinking in reverse order of
+
+program development. Teams will be provided with an executable file or a batch file and from the outputs, they have
+
+to design algorithms and in next phase they will have to design a program for the exe files within a given time limit.<br>
+Team & fees structure:<br>
+
+    2 members in a group and Rs 50/- Per team </h4><br><h2>Tasks:</h2><br><h4>PHASE 1 ALGORITHMS
+
+<br>Participants will have to formulate the output into an algorithm.
+<br>
+PHASE 2 PROGRAMMING
+<br>
+From a given exe file participants have to make source code and execute it to get the
+
+same output.
+<br>
+Note: both phases will comprise of beginners, intermediate and advanced levels</h4><br><h2>Rules :</h2><br><h4>1) No copy paste of content, allowed participant have to design their own programs and algorithms as per
+
+instructions provided on time.
+<br>
+2) Participants have to complete the task within a given time limit.
+<br>
+3) Evaluation criteria will be based on time elapsed by the participant
+<br>
+4) Participants will be given only 2 chances to compile their programs.
+<br>
+5) Participants found to be using any other sort of supporting material will be debarred from the event.
+<br>
+6) Only participants clearing 1st phase will be entering into 2nd phase.
+<br>
+Note:<br> 1) The terms marked with * are subjected to change (names given to winners).
+<br>
+2) In cases of draw ranking criteria will be on efficiency of algorithms.</h4><br><h2>Prizes :</h2><br><h4>Will Be updated soon</h4><br><h2>Contact:</h2><br><h4>Parag Yenkar 9730938208
+
+<br>Bhushan Wanhere 9479479717                     <br> </h4></div>
+                  <div class="card-actions">
+                    <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                  </div>
+                  </paper-card>
+
+                </section>
+                <section data-route="searchspider">
+                      <paper-card heading=""style="float:left;margin:50px" image="http://joomla4biz.com/wp-content/uploads/2014/06/Google-Spider-Index-Time-720x340.jpg"  elevation="2">
+                      <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4>Search Spider is all about solving typical codes and finding the most accurate webpage that matches the given
+
+criteria. The team will be provided with code which they have to execute and the term they will be getting has to be
+
+matched with an appropriate webpage. It’s totally a time bounded event where all that count is just your accuracy
+
+and speed so get your coding and searching skills sharper and get ready to go.<br>
+FEES: 100 per team
+<br>
+MEMBERS/TEAM:2 </h4><br><h2>Tasks:</h2><br><h4>Time limit -30 min
+<br>
+PHASE 1 OPTIMIZER
+<br>
+In this phase participants will be given a code which they will have to execute removing
+
+errors
+<br>
+PHASE 2 SPIDER
+<br>
+In this phase participants will have to reach to the most accurate webpages based on the
+
+terms generated by previous execution.</h4><br><h2>Rules :</h2><br><h4>1) Participants can’t change the programs and can’t use any tools to correct it and have to follow as per
+
+instructions provided on time.
+<br>
+2) Evaluation criteria will be based on time elapsed by the participant
+<br>
+3) Participants will be given only 3 chances to compile their programs
+<br>
+4) Participants found to be using any other sort of supporting material other than those permitted will be
+
+debarred from the event.
+<br>
+5) Only participants clearing 1st phase will be entering into 2nd phase where they will be free to use searching
+
+tools and internet facilities.
+<br>
+Note: 1) In cases of draw ranking criteria will be on accuracy.
+<br>
+2) In cases of draw ranking criteria will be on efficiency of algorithms.</h4><br><h2>Prizes :</h2><br><h4>*SPIDER SURFER 2000/-<br>
+
+*WEBOMANIAC 1000/-</h4><br><h2>Contact:</h2><br><h4>Deepesh Deshmukh 8421269847
+
+<br>Gaurav Varma 7038096433                     <br> </h4></div>
+                      <div class="card-actions">
+                        <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                      </div>
+                      </paper-card>
+
+                    </section>
+                    <section data-route="technorad">
+                          <paper-card heading=""style="float:left;margin:50px" image="https://upload.wikimedia.org/wikipedia/commons/d/d7/Munich_-_Two_men_working_in_a_Bicycle_repair_shop_-_5893.jpg"  elevation="2">
+                          <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4>It is purely a technical event. TECHNO-RAD is a combination of two words i.e. Techno means
+
+technical and RAD is a German word which means Bicycle. It gives opportunity to solve the
+
+technical problems related  to Bicycle.<br>
+Fees & team structure:
+<br>
+            2 members in a group and Rs200/- Per team
+    <br>
+    <h2>Task:</h2><h4>Each group have to disassemble and again assemble the bicycle by using minimum tools.</h4><br><h2>Rules :</h2><br><h4>1. Use minimum number of tools
+<br>
+2. Complete the task within specified time.
+<br>
+3. Marking will be based on the
+
+ Time<br>
+
+ No. of tools<br>
+
+ Performance <br>
+0
+ Bonding between group members
+<br>
+ Accuracy</h4><br><h2>Prizes :</h2><br><h4>Will be updated soon</h4><br><h2>Contact:</h2><br><h4>Piyush kale- 8390358582                  <br>        Rahul Bansode – 9552153570<br> </h4></div>
+                          <div class="card-actions">
+                            <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                          </div>
+                          </paper-card>
+
+                        </section>
+                        <section data-route="circuitmania">
+                              <paper-card heading=""style="float:left;margin:50px" image="http://www.csitdurg.in/apps/Laqshya_2013/Events/Parakram/Circuit%20Mania/images/Ciccuit%20mania.png"  elevation="2">
+                              <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> A mind blowing event that concentrates mainly on enhancing the circuit designing capabilities of the
+
+engineering students which will also clarify the theoretical as well as practical knowledge. It is good
+
+opportunity to show how fast and perfect you are on making things works…
+
+.<br>
+            Team & fees structure:<br>
+
+              FEES 100/- PER TEAM</h4><br><h2>Tasks:</h2><br><h4>This event includes THREE rounds:
+<br>
+Round -1 : TROUBLE-SHOOTING
+<br>
+                     The team will be given a circuit on the slide and circuit will have some errors. They will
+
+be provided with the output of the circuit. The team have to find out the errors and correct it so as
+
+to get the desired output.
+<br>
+                     Team have to draw the corrected circuit on paper, there is no need to mount the
+
+components.
+<br>
+Round-2: MOUNTING THE COMPONENTS
+<br>
+                     The selected teams will be given the circuit with all the specifications of the components.
+<br>
+We will provide components and breadboard for mounting the components. They have to obtained
+
+desired output.
+<br>
+Round-3: TRAP THE MIND
+
+                    <br>This will be surprising round for all the finalist.</h4><br><h2>Rules :</h2><br><h4>1.       Each team should consist of maximum 2 members, entry fees per team will be RS. 100.
+<br>
+2. First round will be qualification round.
+<br>
+3. Only qualified teams can play second round.
+<br>
+4. Top most ranking teams will be qualified for final round.
+<br>
+5. Judges decision will be final decision and will be binding to all.
+<br>
+6. Rules may changes.</h4><br><h2>Prizes :</h2><br><h4>1ST PRIZE   1500/-
+<br>
+2ND PRIZE   750/-</h4><br><h2>Contact:</h2><br><h4>Vaibhav Gaikwad : 8856891980
+
+ vaibhav123gaikwad@gamil.com
+<br>
+ Arti Yeole: 9922290293
+
+ artiyeole@gmail.com       <br> </h4></div>
+                              <div class="card-actions">
+                                <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                              </div>
+                              </paper-card>
+
+                            </section>
+                            <section data-route="roborace">
+                                  <paper-card heading=""style="float:left;margin:50px" image="http://inflamore2k15.com/wp-content/uploads/2015/07/robo-wit.jpg"  elevation="2">
+                                  <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4>This is the challenge where manually controlled ROBOTS will
+compete with each other to reach the destination in shortest time by
+crossing the hurdles safely.
+
+
+
+        the best driver is the one who is capable to drive the bot at any
+situation and on any type of surface safely.<br>
+<h2>Robot Specification</h2>
+
+
+<br>
+1) The maximum dimension of the robot can be 30 x 30 x15 cm (l x b
+x w).
+
+
+<br>
+2) The robot may be wired or wireless.
+<br>
+3) The length of the wire (for wired bots) should be long enough to
+cover the  whole track and wire should remain slack during the complete
+run.
+
+
+<br>
+4) Weight must not exceed above 5 kg.
+<br>
+5) The power supply will be provided maximum up to 24Volt.
+<br>
+6) Readymade toy car will not be allowed.
+                            <br>
+                          </h4><br><h2>Tasks:</h2><br><h4>1) The competition is based on time trail system. There will a qualifying round
+for each team.
+
+
+<br>
+2) The top team from qualifying round makes it to the final round on basis of
+time trials.
+
+
+<br>
+3) Three hand touches are allowed with penalty of 10 seconds. For each hand
+touch, penalty time will be     added further to the overall time required by
+robot for completion of specified round.
+<br>
+4) Your robot must be ready when call is made for your team.
+<br>
+5) All about final round will be notified on the final day.
+
+
+
+<br>
+Bonus points:
+<br>
+
+
+You will be given several opportunities while racing to gain bonus point and it
+will declare on the time of event.</h4><br><h2>Rules :</h2><br><h4>1) Robot should be as per the given specifications.
+<br>
+2) Each team can have maximum four members. Students from different institutes can
+form a team. Participation fees for each group is Rs.400
+<br>
+3) The robot should not damage the arena.
+<br>
+4) The robot must not leave behind any of its parts during the run; else it will result in
+disqualification.
+
+
+<br>
+5) Unethical behaviour could lead to disqualification. Faculty-coordinators have all the
+rights to take final decision for any matter during the event.
+<br>
+6) Judges decision will be considered final.
+<br>
+7) Machine must not contain any readymade kits, pneumatic & hydraulic systems, IC
+engines
+
+
+<br>
+8) If any of the robots starts off before start up call, the counter would be restarted and
+the machines will get a second chance. If repeated again then team will be disqualified.
+
+<br>
+
+
+*Rules may subject to change.</h4><br><h2>Prizes :</h2><br><h4>Will be updated soon</h4><br><h2>Contact:</h2><br><h4>1) Shubham Tonde : 9545426993
+
+   shubhamtonde96@gmail.com
+<br>
+2) Vishakha Deshlahara : 955615140
+
+   v.deshlahara@gmail.com                  <br> </h4></div>
+                                  <div class="card-actions">
+                                    <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                                  </div>
+                                  </paper-card>
+
+                                </section>
+                                <section data-route="mudrace">
+                                      <paper-card heading=""style="float:left;margin:50px" image="http://www.revell.de/fileadmin/_processed_/csm_24623__S_M_D_P_W_QUAD_DUST_RACER_e54e652b2f.jpg"  elevation="2">
+                                      <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4>This is the challenge where manually controlled ROBOTS will
+    compete with each other to reach the destination in shortest time by
+    crossing the hurdles safely.
+
+
+
+            the best driver is the one who is capable to drive the bot at any
+    situation and on any type of surface safely.<br>
+    Fees & Team structurre:<br>4 members per team and Rs400/- Per team.<BR>
+    <h2>Robot Specification</h2>
+
+
+    <br>
+    1) The maximum dimension of the robot can be 30 x 30 x15 cm (l x b
+    x w).
+
+
+    <br>
+    2) The robot may be wired or wireless.
+    <br>
+    3) The length of the wire (for wired bots) should be long enough to
+    cover the  whole track and wire should remain slack during the complete
+    run.
+
+
+    <br>
+    4) Weight must not exceed above 5 kg.
+    <br>
+    5) The power supply will be provided maximum up to 24Volt.
+    <br>
+    6) Readymade toy car will not be allowed.
+                                <br>
+                              </h4><br><h2>Tasks:</h2><br><h4>To complete the track in minimum time by crossing all the hurdles in track.</h4><br><h2>Rules :</h2><br><h4>1. Bot should run on D.C. motor (I.C. engine bot is not allowed)
+<br>
+2. Both wired and wireless bots are allowed
+<br>
+3. Winner will be decided on the basis of time taken to complete the track.
+<br>
+4. Hand touches will cause you time addition in your total time to complete the track</h4><br><h2>Prizes :</h2><br><h4>Will be updated soon</h4><br><h2>Contact:</h2><br><h4>Mayank Vajpayee – 8237747586                                      <br> Himanshu Ramekar- 9158249741
+
+<br>Sumeet Mandavgole – 9405406503                            <br>      Anshul patankar-8989490455        <br> </h4></div>
+                                      <div class="card-actions">
+                                        <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                                      </div>
+                                      </paper-card>
+
+                                    </section>
+                                    <section data-route="langaming">
+                                            <paper-card heading=""style="float:left;margin:50px" image="http://i.imgur.com/KSQeFfe.jpg"  elevation="2">
+                                            <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> In LAN Gaming we are going to organize various games like COUNTER
+
+STRIKE ,NFS(Need For Speed) and SMACKDOWN.</h4><br>
+Team & fees structure:
+<br>
+   4 members per team and Rs 100/- Per team
+                                          <br>  <h2>Tasks:</h2><br><h4>To complete  particular task in minimum time by crossing all the hurdles in task.</h4><br><h2>Rules :</h2><br><h4>1. Do not bring any type of hacks/viruses/etc. to the event
+
+2. Listen to those in charge.
+
+3. Team messages are allowed. </h4><br><h2>Prizes :</h2><br><h4>Will Be updated soon</h4><br><h2>Contact:</h2><br><h4>Harshal Phuse – 8975415414                         <br>  Pushpak Kakani- 8446243513
+
+<br>Yash Jaiswal –8275404523</h4></div>
+                                            <div class="card-actions">
+                                              <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                                            </div>
+                                            </paper-card>
+
+                                      </section>
+                                      <section data-route="counterstrike">
+                                              <paper-card heading=""style="float:left;margin:50px" image="https://i.ytimg.com/vi/pYxxWUXY7Qw/maxresdefault.jpg"  elevation="2">
+                                              <div class="card-content" style="padding:60px"><h2>Introduction :</h2><br><h4> Counter Strike – The Next Step is a non technical event.  Team has to play the game
+
+on ground. In this game participant need to use their shooting skills.</h4><br>
+  Team & fees structure:
+  <br>
+     4 members per team and Rs 100/- Per team
+                                            <br>  <h2>Tasks:</h2><br><h4>A gun will be provided to each team member with 25 colour bullets. Both playing teams has
+
+to shoot the members from opposite team .There will be some hurdles in the play ground to
+
+have more interest and fun .</h4><br><h2>Rules :</h2><br><h4>1. Extra bullets will not be provided.
+
+<br>2. Marking will be based on the
+
+Maximum number of hit shoot </h4><br><h2>Prizes :</h2><br><h4>Will Be updated soon</h4><br><h2>Contact:</h2><br><h4>Ashish Pawar - 7841090494                       <br>   Ranjit Joshi – 8975988573
+
+<br>Chetan Patil -8856897072</h4></div>
+                                              <div class="card-actions">
+                                                <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                                              </div>
+                                              </paper-card>
+
+                                        </section>
+                                        <section data-route="snakeladder">
+                                                <paper-card heading=""style="float:left;margin:50px" image="http://i.imgur.com/KSQeFfe.jpg"  elevation="2">
+                                                <div class="card-content" style="padding:60px"><centre><H2>SNAKE & LADDER</h2></centre><h2>Introduction :</h2><br><h4>The most beloved game of your childhood is back with optimum fun and exciting prizes. All of us had
+
+play snake and ladder, same as that of we will have the event here. Lot of fun, lot of enjoy but in
+
+different style. We have same arrangement of snake and ladder as we saw in our childhood. So are
+
+you ready for fun….</h4><br>
+    Team & fees structure:
+    <br>
+       FEES 50/- PER participant
+                                              <br>  <h2>Tasks:</h2><br><h4>Phases in the event
+<br>
+1)        There are THREE phases in SNAKE & LADDER event.
+<br>
+2)        In first phase participants have to through dice, the number comes on dice that much
+
+questions are asked to participants. According to correct answers participants goes forward in game.
+<br>
+3)        In second phase, puzzles are asked to the group. Five puzzles are asked to each group. Before
+
+that they must through the dice, right answer multiply by the numbers comes on the dice.
+<br>
+4)        In third phase, only three groups are selected. In this there are two rounds. The group having
+
+maximum points it directly goes in final round. In first round remaining two groups have to do some
+
+tasks given by the event co-ordinaters. Then in second round the group directly comes in final round
+
+and the winner team from first round have to do task.
+
+5)       After every phase we have a elimination round.
+<br>
+6)       Phases may changes at the time of event.</h4><br><h2>Rules :</h2><br><h4>1)  Each team can have maximum THREE members. Students from different institutes can form a
+
+team.
+<br>
+2)  Unethical behaviour could lead to disqualification. Faculty-coordinators have all the rights to take
+<br>
+final decision for any matter during the event.
+<br>
+3)  Judges decision will be considered final.
+<br>
+4)  Participation fees is RS. 50 for each participants.
+<br>
+*Rules may subject to change. </h4><br><h2>Prizes :</h2><br><h4>1ST PRIZE   1000/-
+<br>
+2ND PRIZE   701/-</h4><br><h2>Contact:</h2><br><h4>Pooja Gawhande : 7219758857
+
+poojagawhande@gmail.com
+<br>
+Harshada Bharote: 7028271892
+
+harshadabharote10@rediffmail.com</h4></div>
+                                                <div class="card-actions">
+                                                  <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                                                </div>
+                                                </paper-card>
+
+                                          </section>
+            <section data-route="contact">
+              <iframe src="https://docs.google.com/forms/d/1H2YO0qjZdS_klHo09KwpB61ufZ-nXsY58m4RxtVh5FI/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            </section>
+            <section data-route="accomodation">
+
+                      <paper-card heading=""style="float:left;margin:50px" image="http://media-cdn.tripadvisor.com/media/photo-s/06/ea/96/8f/new-world-st-hostel.jpg"  elevation="2">
+                      <div class="card-content" style="padding:60px"><centre><H2>Accomodation Is Avialabe </h2></centre><br>Details will be provided onthespot
+</div>
+                      <div class="card-actions">
+                        <a data-route="exibitions" href="{{baseURL}}/events-register/iste" style="text-decoration:none" > <h3 style="float:left">Regiter</h3> <paper-fab icon="create" style="float:right;align:right"></paper-fab></a>
+                      </div>
+                      </paper-card>
+
+            </section>   <section data-route="infor">
+<paper-material style="width:300px;height:auto;float:left" >
+                        <h2>Location</h2> <google-map style="width:300px;height:300px"
+       latitude="20.782557"
+       longitude="76.681201"
+       disableDefaultUI>
+     <google-map-marker
+     latitude="20.782557"
+     longitude="76.681201"
+         title="Go Giants!"
+         draggable="true"></google-map-marker>
+   </google-map>
+</paper-material>
+<paper-card heading=""style="float:left;margin:50px" image="http://localadz.com-get-more.net/wp-content/uploads/2014/06/freelancer1.jpg"  elevation="2">
+<div class="card-content" style="padding:10px"><centre><H2>Designed & Developed by: </h2><br></centre><br><h3>Mr.ivek Nimkarde</h3><br>
+  <centre><H2>Logo & Poster credits: </h2><br></centre><br><h3>Mr.Soham Dhole & Mr.Bhushan Wanhere</h3><br>
+</div>
+
+</paper-card>
+               </section>  <section data-route="sponsors">
+                           <paper-card heading="Sparx Shoes"style="width:300px;float:left;margin:50px;border-radius:50px"image="https://pbs.twimg.com/profile_images/571178498052456448/awj7Cvq2.png" elevation="2">
+                           <div class="card-actions">
+                           <paper-button>  <a data-route="ieee" href="sparx">Visit Site</a></paper-button>
+                           </div>
+                           </paper-card>
+
+                           </section><section data-route="team">
+                <paper-button style="width:100%"><b> Chief Co-ordinator</b> </paper-button>
+            <centre><paper-card heading=""style="width:200px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+  <div class="card-content"><b>Mr. Deepesh Khandelwal</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Co-ordinator </b></paper-button>
+<centre><paper-card heading=""style="width:200px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Sanjeet Chavan(intern)</b></div>
+</paper-card>
+<paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Sneha Chhayala(extern)</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b> Secretary</b></paper-button>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Shikha Pande</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b> Treasurer</b> </paper-button>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Soham Dhole</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"> <b>Technical Team</b> </paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr.Vivek Nimkarde</b></div>
+</paper-card></centre>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Miss.Mitali padiya</b></div>
+</paper-card></centre>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Miss. Kavita Kadam</b></div>
+</paper-card></centre>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Akash Kalaskar</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b> Resource Team </b></paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Miss. Ankita Dahake</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Aniket Yawalkar</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Miss. Neha Anandpara</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Pranav Hiware</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Publicity Committee</b> </paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Vaibhav Gaikwad</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"></b>Mr. Nirmal Ankaikar</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Rahul Bansode</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Sponsorship Committee</b> </paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Ishant Deshmukh</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Mr. Rohit Ghule</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Mrunal Belsare</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Stage Decoration  </b></paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Urvashi Ingle</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Samiksha Kalore</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Anchroing Committee</b>  </paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Poonam Hajare</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Pooja Agrawal</b></div>
+</paper-card></centre>
+<paper-button style="width:100%"><b>Registration Committee <b> </paper-button>
+<centre><paper-card heading=""style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Pooja Gawhande</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Ashanka Bodhkar</b></div>
+</paper-card></centre>
+<centre><paper-card heading="Sparx Shoes"style="width:200px;margin:50px;border-radius:50Px"image="http://www.astaacademy.org/wp-content/uploads/2014/07/user-placeholder.jpg" elevation="2">
+<div class="card-content"><b>Ms. Samiksha Pinge</b></div>
+</paper-card></centre>
+
+
+
+      </section>
+
+
+
+
+
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
